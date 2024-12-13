@@ -13,6 +13,8 @@ public interface ArrayListInterface {
 
     Product findByName(String name);
 
+    int findByIndex(String name);
+
     List<Product> findAll();
 }
 

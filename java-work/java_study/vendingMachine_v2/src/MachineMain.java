@@ -33,27 +33,21 @@ public class MachineMain {
                         adminMenuNumber = sc.nextInt();
                         switch (adminMenuNumber) {
                             case 1:
-                                System.out.println("1.메뉴등록");
                                 adminView.insertMenu();
                                 break;
                             case 2:
-                                System.out.println("2.메뉴삭제");
                                 adminView.deleteMenu();
                                 break;
                             case 3:
-                                System.out.println("3.메뉴수정");
                                 adminView.updateMenu();
                                 break;
                             case 4:
-                                System.out.println("4.재고등록");
                                 adminView.updateStock();
                                 break;
                             case 5:
-                                System.out.println("5.전체목록보기");
                                 adminView.viewAllList();
                                 break;
                             case 6:
-                                System.out.println("6.이전");
                                 break;
                             default:
                                 System.out.println("잘못 입력되었습니다.");

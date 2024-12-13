@@ -6,14 +6,20 @@ public class Product {
     private int price; // 제품 단가
     private int stock; // 제품 재고
 
+    // 오버로딩, 빈깡통 생성자가 없는 아이면 여기에 맵핑
+    public Product() {};
+
+    // 생성자가 있으면 여기에 맵핑
+    public Product(String item, int price, int stock) {
+        this.item = item;
+        this.price = price;
+        this.stock = stock;
+    }
 
     @Override
     public String toString() {
-        return "Product{" +
-                "item='" + item + '\'' +
-                ", price=" + price +
-                ", stock=" + stock +
-                '}';
+        String result = "제품명 : " + item + "/ 가격 : " + price + "/ 재고 : " + stock ;
+        return result;
     }
 
     public String getItem() {
