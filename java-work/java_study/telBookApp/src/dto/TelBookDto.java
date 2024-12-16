@@ -4,21 +4,22 @@ public class TelBookDto {
     private int id;
     private String name;
     private int age;
-    private String adress;
+    private String address;
     private String telNum;
 
-    @Override
-    public String toString() {
-        return id +  "\t  "  + name + "\t" + age + "\t" + adress + "\t" + telNum;
-    }
+    public TelBookDto(){}
 
-    public TelBookDto() {};
-    public TelBookDto(int id, String name, int age, String adress, String telNum) {
+    public TelBookDto(int id, String name, int age, String address, String telNum) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.adress = adress;
+        this.address = address;
         this.telNum = telNum;
+    }
+
+    @Override
+    public String toString() {
+        return id +  "\t  "  + name + "\t" + age + "\t" + address + "\t" + telNum;
     }
 
     public int getId() {
@@ -45,12 +46,12 @@ public class TelBookDto {
         this.age = age;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getTelNum() {
