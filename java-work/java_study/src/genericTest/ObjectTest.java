@@ -13,6 +13,7 @@ public class ObjectTest {
         animalist.add(cat);
 
         // 다운캐스팅
+        //
         String name = ((Dog)dog).getName();
         System.out.println(name);
 
