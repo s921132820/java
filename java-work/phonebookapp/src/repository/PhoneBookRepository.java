@@ -50,7 +50,8 @@ public class PhoneBookRepository  implements RepositoryInterface{
         try {
             psmt = dbConn.prepareStatement(sql);
             psmt.setLong(1, id);
-            return psmt.executeUpdate();
+            int deleteResult = psmt.executeUpdate();
+            return deleteResult;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -101,6 +102,8 @@ public class PhoneBookRepository  implements RepositoryInterface{
     @Override
     public TelBookDTO findById(Long id) {
         System.out.println("[PhoneBookRepository]-findById");
+        sql = "SELECT * FROM PHONE_BOOK ";
+        psmt = dbConn.prepareStatement(sql);
         return null;
     }
 

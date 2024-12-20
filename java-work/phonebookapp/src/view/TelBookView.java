@@ -84,12 +84,32 @@ public class TelBookView implements ViewInterface{
     @Override
     public void updateView() {
         System.out.println("[ViewInterface]-updateView");
-        System.out.println("업데이트할 전화번호부의 아이디를 입력하세요");
-        Long updateID = sc.nextLong();
-        if (bookService.updateService(updateID)>0) {
-
+        System.out.println("업데이트 할 아이디를 입력하세요");
+        Long updateId = sc.nextLong();
+        if (bookService.findByIdService(updateId) > 0) {
+            int selectNum = 0;
+            System.out.println("1. 이름변경 2.나이변경 3.주소변경 4.번호변경 5.변경완료/이전으로 돌아가기");
+            switch (selectNum) {
+                case 1:
+                    System.out.println("변경할 이름을 입력해주세요");
+                    String updateName = sc.next();
+                    break;
+                case 2:
+                    System.out.println("변경할 나이를 입력해주세요");
+                    int updateAge = sc.nextInt();
+                    break;
+                case 3:
+                    System.out.println("변경할 주소를 입력해주세요");
+                    String updateAddress = sc.next();
+                    break;
+                case 4:
+                    System.out.println("변경할 번호를 입력해주세요");
+                    String updatePhone = sc.next();
+                    break;
+                case 5:
+                    return;
+            }
         }
-
     }
 
     @Override
@@ -97,7 +117,7 @@ public class TelBookView implements ViewInterface{
         System.out.println("[ViewInterface]-deleteView");
         System.out.println("삭제할 전화번호부의 아이디를 입력하세요");
         Long deleteId = sc.nextLong();
-        if (bookService.deleteService(deleteId)>0) {
+        if (bookService.deleteService(deleteId) > 0) {
             System.out.println("ID : " + deleteId + "의 데이터가 삭제되었습니다.");
         } else {
             System.out.println("삭제에 실패했습니다. 관리자에게 문의하세요");

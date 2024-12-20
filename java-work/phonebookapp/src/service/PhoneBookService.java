@@ -17,7 +17,7 @@ public class PhoneBookService implements ServiceInterface{
     @Override
     public int updateService(TelBookDTO dto) {
         System.out.println("[PhoneBookService]-updateService");
-        return 0;
+        return bookRepository.updateData(dto);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class PhoneBookService implements ServiceInterface{
     @Override
     public TelBookDTO findByIdService(Long id) {
         System.out.println("[PhoneBookService]-findByIdService");
-        return null;
+        return bookRepository.findById(id);
     }
 
     @Override
